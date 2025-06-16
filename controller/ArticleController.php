@@ -1,14 +1,12 @@
 <?php
 require_once __DIR__ . '/../model/Article.php';
-require_once __DIR__ . '/../model/Category.php';
 
 class ArticleController {
     private $articleModel;
-    private $categoryModel;
+    private $categories = ['tissus', 'merceries', 'fournitures'];
 
     public function __construct() {
         $this->articleModel = new Article();
-        $this->categoryModel = new Category();
     }
 
     public function index() {
@@ -19,7 +17,7 @@ class ArticleController {
     }
 
     public function create() {
-        $categories = $this->categoryModel->getAll();
+        $categories = $this->categories;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
@@ -43,7 +41,7 @@ class ArticleController {
 
     public function edit($id) {
         $article = $this->articleModel->getById($id);
-        $categories = $this->categoryModel->getAll();
+        $categories = $this->categories;
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [

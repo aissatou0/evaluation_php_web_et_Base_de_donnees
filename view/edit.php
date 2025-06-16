@@ -30,14 +30,14 @@
                         <label for="categorie" class="form-label">Catégorie *</label>
                         <select id="categorie" name="categorie" class="form-select" required>
                             <option value="">Sélectionner une catégorie</option>
-                            <?php foreach ($categories as $cat): ?>
-                                <option value="<?= htmlspecialchars($cat['nom']) ?>" <?= ($cat['nom'] === $article['categorie']) ? 'selected' : '' ?>><?= htmlspecialchars($cat['nom']) ?></option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?= htmlspecialchars($category) ?>" <?= ($category === $article['categorie']) ? 'selected' : '' ?>><?= htmlspecialchars($category) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="prix_unitaire" class="form-label">Prix unitaire (€) *</label>
+                        <label for="prix_unitaire" class="form-label">Prix unitaire (fcfa) *</label>
                         <input type="number" step="0.01" id="prix_unitaire" name="prix_unitaire" class="form-control" value="<?= htmlspecialchars($article['prix_unitaire']) ?>" required>
                     </div>
                 </div>

@@ -57,7 +57,7 @@
                         <td><?= htmlspecialchars($article['categorie']) ?></td>
                         <td><?= htmlspecialchars($article['qte_stock']) ?> <?= htmlspecialchars($article['unite']) ?></td>
                         <td><?= htmlspecialchars($article['seuil_alerte']) ?></td>
-                        <td><?= number_format($article['prix_unitaire'], 2, ',', ' ') ?> €</td>
+                        <td><?= number_format($article['prix_unitaire'], 2, ',', ' ') ?> fcfa</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Actions">
                                 <a href="#" class="btn btn-info btn-sm" title="Voir"><i class="fas fa-eye"></i></a>
